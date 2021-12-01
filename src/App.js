@@ -3,22 +3,29 @@ import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Login from "./paginas/login/Login"
 import Cadastro from "./paginas/cadastro/Cadastro";
 import Pagina404 from "./paginas/pagina404/Pagina404";
-import Cabecalho from "./components/Cabecalho";
+
 import Home from "./paginas/Home";
 import AllProdutos from "./paginas/produtos/AllProdutos";
 import Produto from "./paginas/produtos/Produto"
 import BemVindo from "./paginas/BemVindo";
+import { GlobalStyle } from "./styles/global";
+import { Header } from "./components/Header";
 
-function App()
-{
+
+function App() {
 
   const logado = localStorage.getItem("username")
   const admin = localStorage.getItem("acesso")
 
-      return (
+  return (
+    <>
+      <GlobalStyle />
+
+
       <BrowserRouter>
+      <Header />
         <Routes>
-           <Route exact path="/cadastro" element={<Cadastro />} />
+          <Route exact path="/cadastro" element={<Cadastro />} />
           <Route exact path="/login" element={<Login />} />
           {!logado && <Route exact path="/" element={<Home />} />}
           {logado && <Route exact path="/" element={<BemVindo />} />}
@@ -32,8 +39,9 @@ function App()
 
         </Routes>
       </BrowserRouter>
-    );
- 
+    </>
+  );
+
 }
 
 
