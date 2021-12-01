@@ -6,27 +6,45 @@ import { useNavigate } from "react-router-dom";
 function Login({ aoEnviar }) {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const [acesso, setAcesso] = useState();
 
   const history = useNavigate();
 
+  var data = {
+    email: username,
+    senha: password,
+  };
+
   async function login() {
     try {
-      var { headers } = await api.post(`/login`, {
-        email: username,
-        senha: password,
-      });
+      var { headers } = await api.post(`/login`, data);
+
+      getAcesso();
 
       console.log(headers.authorization);
-
       localStorage.setItem("username", username);
       localStorage.setItem("token", headers.authorization);
-      history('/loguei')
-      console.log(localStorage.getItem("username"));
-
+      history("/");
     } catch {
       alert("Usuario Invalido!!");
       setUsername("");
       setPassword("");
+    }
+  }
+
+  async function getAcesso() {
+    try {
+      var { data } = await api.get(`/clientes/email?value=${username}`);
+
+      if (data.acesso == null) {
+        console.log("Voce se conectou na conta de Cliente");
+      } else {
+        console.log("Bem vindo ADM");
+        localStorage.setItem('acesso', data.acesso)
+
+      }
+    } catch {
+      alert("DEU RUIM");
     }
   }
 

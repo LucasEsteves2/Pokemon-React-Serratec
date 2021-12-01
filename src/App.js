@@ -13,20 +13,23 @@ function App()
 {
 
   const logado = localStorage.getItem("username")
+  const admin = localStorage.getItem("acesso")
 
       return (
       <BrowserRouter>
-        <Cabecalho />
         <Routes>
            <Route exact path="/cadastro" element={<Cadastro />} />
           <Route exact path="/login" element={<Login />} />
-         
           {!logado && <Route exact path="/" element={<Home />} />}
           {logado && <Route exact path="/" element={<BemVindo />} />}
-        
           <Route exact path="/produtos" element={<AllProdutos />} />
           <Route exact path="/produtos/:id" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
+
+          {admin && <Route exact path="/admin" element={<BemVindo />} />}
+          {!admin && <Route exact path="/admin" element={<Pagina404 />} />}
+
+
         </Routes>
       </BrowserRouter>
     );
