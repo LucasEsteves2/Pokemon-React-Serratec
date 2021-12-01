@@ -1,6 +1,5 @@
 import React from 'react'
 import imagem from '../assets/img/doguito.svg'
-import '../assets/css/componentes/cabecalho.css'
 import { Link } from 'react-router-dom'
 
 const Cabecalho = () => { 
