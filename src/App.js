@@ -18,7 +18,6 @@ function App()
 
       return (
       <BrowserRouter>
-        <Cabecalho />
         <Routes>
            <Route exact path="/cadastro" element={<Cadastro />} />
           <Route exact path="/login" element={<Login />} />
