@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Login from "./paginas/login/Login"
-import Cadastro from "./paginas/Cadastro";
-import Pagina404 from "./paginas/Pagina404";
+import Cadastro from "./paginas/cadastro/Cadastro";
+import Pagina404 from "./paginas/pagina404/Pagina404";
 import Cabecalho from "./components/Cabecalho";
 import Home from "./paginas/Home";
-import AllProdutos from "./paginas/AllProdutos";
-import Produto from "./paginas/Produto";
+import AllProdutos from "./paginas/produtos/AllProdutos";
+import Produto from "./paginas/produtos/Produto"
 import BemVindo from "./paginas/BemVindo";
 
 class App extends Component {
@@ -28,5 +28,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;

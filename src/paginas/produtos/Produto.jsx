@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../assets/css/post.css";
-import { buscar } from "../service/api";
+import "../../assets/css/post.css";
+import { buscar } from "../../service/api";
 import {useParams} from 'react-router-dom'
 
 

@@ -1,14 +1,14 @@
 import React from "react";
-import { api } from "../service/api";
+import { api } from "../../service/api";
 
-import "../App.css";
-import FormularioCadastro from "../components/FormularioCadastro/FormularioCadastro";
+import "../../App.css"
+import FormularioCadastro from "../../components/FormularioCadastro/FormularioCadastro";
 
 import { Container, Typography } from "@material-ui/core";
 
-import ValidacoesCadastro from "../contexts/ValidacoesCadastro";
+import ValidacoesCadastro from "../../contexts/ValidacoesCadastro";
 
-import { validarCPF, validarSenha } from "../models/cadastro";
+import { validarCPF, validarSenha } from "../../models/cadastro";
 
 function Cadastro() {
   return (

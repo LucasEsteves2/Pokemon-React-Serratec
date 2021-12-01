@@ -14,3 +14,10 @@
   color: var(--cor-primaria);
 }
 
+p {
+  fontSize: 1.2rem
+}
+span {
+  color: rgb(251, 251, 255),
+}
+
