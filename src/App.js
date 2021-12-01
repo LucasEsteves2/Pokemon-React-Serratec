@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Login from "./paginas/login/Login"
 import Cadastro from "./paginas/cadastro/Cadastro";

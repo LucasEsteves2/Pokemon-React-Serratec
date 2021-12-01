@@ -1,7 +1,5 @@
 import React from "react";
 import imagem from "../../assets/img/Snorlax.svg";
-import "../../assets/css/404.css";
-import "../../assets/css/base/base.css";
 import { Img } from "react-image";
 
 
