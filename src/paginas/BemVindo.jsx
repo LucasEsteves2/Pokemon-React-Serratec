@@ -15,7 +15,7 @@ function BemVindo() {
     <>
       <Container component="article" maxWidth="sm">
         <Typography variant="h5">
-          BEM VINDO: {localStorage.getItem("username")}
+          BEM VINDO!!: {localStorage.getItem("username")}
         </Typography>
 
         <br />
