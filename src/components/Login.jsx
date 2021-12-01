@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Login({ aoEnviar }) {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const [acesso, setAcesso] = useState();
 
   const history = useNavigate();
 
@@ -34,11 +35,13 @@ function Login({ aoEnviar }) {
   async function getAcesso() {
     try {
       var { data } = await api.get(`/clientes/email?value=${username}`);
-      console.log(data.acesso);
+
       if (data.acesso == null) {
         console.log("Voce se conectou na conta de Cliente");
       } else {
         console.log("Bem vindo ADM");
+        localStorage.setItem('acesso', data.acesso)
+
       }
     } catch {
       alert("DEU RUIM");
