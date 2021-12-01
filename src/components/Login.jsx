@@ -40,6 +40,7 @@ function Login({ aoEnviar }) {
         console.log("Voce se conectou na conta de Cliente");
       } else {
         console.log("Bem vindo ADM");
+        setAcesso(data.acesso)
         localStorage.setItem('acesso', data.acesso)
 
       }

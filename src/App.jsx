@@ -10,6 +10,8 @@ import Produto from "./paginas/produtos/Produto"
 import BemVindo from "./paginas/BemVindo";
 import { GlobalStyle } from "./styles/global";
 import { Header } from "./components/Header"
+import NewProduto from "./paginas/admin/NewProduto";
+import Administrador from "./paginas/admin/Administrador";
 
 
 function App() {
@@ -33,8 +35,8 @@ function App() {
           <Route exact path="/produtos/:id" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
 
-          {admin && <Route exact path="/admin" element={<BemVindo />} />}
-          {!admin && <Route exact path="/admin" element={<Pagina404 />} />}
+          {admin && <Route exact path="/admin" element={<Administrador />} />}
+          {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
 
 
         </Routes>
