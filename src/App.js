@@ -10,23 +10,28 @@ import AllProdutos from "./paginas/produtos/AllProdutos";
 import Produto from "./paginas/produtos/Produto"
 import BemVindo from "./paginas/BemVindo";
 
-class App extends Component {
-  render() {
-    return (
+function App()
+{
+
+  const logado = localStorage.getItem("username")
+
+      return (
       <BrowserRouter>
         <Cabecalho />
         <Routes>
-          <Route exact path="/cadastro" element={<Cadastro />} />
+           <Route exact path="/cadastro" element={<Cadastro />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/" element={<Home />} />
+         
+          {!logado && <Route exact path="/" element={<Home />} />}
+          {logado && <Route exact path="/" element={<BemVindo />} />}
+        
           <Route exact path="/produtos" element={<AllProdutos />} />
           <Route exact path="/produtos/:id" element={<Produto />} />
-          <Route exact path="/loguei" element={<BemVindo />} />
           <Route path="*" element={<Pagina404 />} />
         </Routes>
       </BrowserRouter>
     );
-  }
+ 
 }
 
 

@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <>
-      <h1> PAGINA INICIAL</h1>
+      <h1> VOCE NAO ESTA LOGADO</h1>
     </>
   );
 }
