@@ -1,7 +1,7 @@
+import React from 'react'
 import { Container, Content, TextoNav } from "./style";
 import logoImg from '../../assets/poke-store.png'
 import { Link } from "react-router-dom";
-import React from "react";
 
 export function Header() {
 
