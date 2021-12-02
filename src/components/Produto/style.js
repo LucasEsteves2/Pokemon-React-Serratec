@@ -2,15 +2,21 @@ import styled from "styled-components";
 
 export const Imgbx = styled.div`
 
+
+
 #poke{
     width:55%;
     height:auto;
 }
 
 margin-top: 3rem;
-margin-left: 9rem;
-margin-right: 2rem;
+margin-left: 8.6rem;
 display: inline-block;
+
+&:last-child {
+  margin-right: 11rem;
+    
+    }
 
 .container1 .card{
   position: relative;
@@ -179,6 +185,8 @@ display: inline-block;
   transition-delay: 0.75s;
   
 }
+
+
 
 
 `

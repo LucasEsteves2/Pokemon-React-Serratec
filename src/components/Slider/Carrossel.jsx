@@ -7,8 +7,9 @@ import { sliderItems } from "./data";
 import { mobile } from "./responsive";
 
 const Container = styled.div`
+  margin-top: 0.1rem;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -55,7 +56,7 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height: 80%;
+  height: 92%;
 `;
 
 const InfoContainer = styled.div`
