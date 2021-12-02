@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Container, Content, TextoNav } from "./style";
 import logoImg from '../../assets/poke-store.png'
 import { Link } from "react-router-dom";
+import Carrossel from "../Slider/Carrossel";
 
 export function Header() {
 
@@ -39,6 +40,10 @@ export function Header() {
                 </TextoNav>
             </Content>
         </Container>
+
+
+        <Carrossel/>
+
         
 </>
 
