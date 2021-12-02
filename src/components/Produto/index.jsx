@@ -7,6 +7,8 @@ export function Produto(props) {
     nome: props.produto.nome,
     preço: props.produto.valor,
     inCart: 0,
+    url: props.produto.urlImagem,
+    desc:props.produto.desc
   });
 
   const [qtdCarrinho2, setQtdCarrinho] = useState();

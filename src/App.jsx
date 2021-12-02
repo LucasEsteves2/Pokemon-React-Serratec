@@ -21,12 +21,12 @@ function App() {
 
   const logado = localStorage.getItem("username")
   const admin = localStorage.getItem("acesso")
+  const carrinho = localStorage.getItem("carrinho")
+
 
   return (
     <>
       <GlobalStyle />
-
-
       <BrowserRouter>
 
         <Routes>
@@ -38,10 +38,9 @@ function App() {
           <Route exact path="/produtos/:id" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
 
-          <Route path="/carrinho" element={<Carrinho />} />
+         {carrinho && <Route path="/carrinho" element={<Carrinho />} />}
 
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
-
 
         </Routes>
       </BrowserRouter>
