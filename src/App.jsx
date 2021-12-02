@@ -13,6 +13,8 @@ import { GlobalStyle } from "./styles/global";
 import { Header } from "./components/Header"
 import NewProduto from "./paginas/admin/NewProduto";
 import Administrador from "./paginas/admin/Administrador";
+import { Carrinho } from "./paginas/cart/Carrinho";
+
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
           <Route exact path="/produtos" element={<AllProdutos />} />
           <Route exact path="/produtos/:id" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
+
+          <Route path="/carrinho" element={<Carrinho />} />
 
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
 
