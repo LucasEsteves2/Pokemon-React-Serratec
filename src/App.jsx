@@ -4,12 +4,12 @@ import Login from "./paginas/login/Login"
 import Cadastro from "./paginas/cadastro/Cadastro";
 import Pagina404 from "./paginas/pagina404/Pagina404";
 
-import Home from "./paginas/Home";
+import { Home } from "./paginas/Home";
 import AllProdutos from "./paginas/produtos/AllProdutos";
 import Produto from "./paginas/produtos/Produto"
 import BemVindo from "./paginas/BemVindo";
 import { GlobalStyle } from "./styles/global";
-import { Header } from "./components/Header"
+
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
 
 
       <BrowserRouter>
-        <Header />
+
         <Routes>
           <Route exact path="/cadastro" element={<Cadastro />} />
           <Route exact path="/login" element={<Login />} />

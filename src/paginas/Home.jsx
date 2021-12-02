@@ -1,12 +1,35 @@
-import React, {} from "react";
+import React, { } from "react";
+import { Header } from "../components/Header";
+import { Produto } from "../components/Produto";
+import { useState, useEffect } from "react";
+import { api } from "../service/api";
 
-function Home() {
+export function Home() {
+  const [pokemon, setPokemon] = useState([])
+
+  useEffect(() => {
+
+    api.get('/produtos')
+      .then(banana => setPokemon(banana.data))
+
+  }, [])
+
+  console.log(pokemon)
+
 
   return (
     <>
-      <h1> VOCE NAO ESTA LOGADO</h1>
-    </>
-  );
-}
+      <Header />
+      <div>
+        {
+          pokemon.map(produto => {
+            return <Produto key={produto.nome} produto={produto} />
 
-export default Home;
+          })
+        }
+      </div>
+    </>
+  )
+
+
+}
