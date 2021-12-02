@@ -13,7 +13,7 @@ export function Produto(props) {
             <div class="container1">
                 <div class="card" id="Muscle">
                     <div class="imgBx">
-                        <img id="poke" src={left} />
+                        <img id="poke" src={props.produto.urlImagem} />
                     </div>
                     <div class="contentBx">
                         <h2>{props.produto.nome}</h2>

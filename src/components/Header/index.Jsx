@@ -16,7 +16,7 @@ export function Header() {
                         <li> <Link to="/">Home</Link></li>
                         <li><Link to="/produtos">Produtos</Link></li>
                         <li> <Link to="/sobre">pokebolas</Link></li>
-                        
+
                     </ul>
                 </TextoNav>
             </Content>
