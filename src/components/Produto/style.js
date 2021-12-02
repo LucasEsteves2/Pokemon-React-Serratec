@@ -4,7 +4,7 @@ export const Imgbx = styled.div`
 
 #poke{
     width:55%;
-    height:65%;
+    height:auto;
 }
 
 margin-top: 3rem;

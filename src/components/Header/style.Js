@@ -4,12 +4,14 @@ import styled from "styled-components";
 export const Container = styled.header`
 background: var(--amarelo);
 
+
 `
 export const Content = styled.nav`
 max-width: 1120px;
 margin: 0 auto;
 justify-content: space-between;
 text-align: center;
+
 
 
 `
