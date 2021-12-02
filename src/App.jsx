@@ -30,13 +30,12 @@ function App() {
         <Routes>
           <Route exact path="/cadastro" element={<Cadastro />} />
           <Route exact path="/login" element={<Login />} />
-          {!logado && <Route exact path="/" element={<Home />} />}
-          {logado && <Route exact path="/" element={<BemVindo />} />}
+          {!admin && <Route exact path="/" element={<Home />} />}
+          {admin && <Route exact path="/" element={<Administrador />} />}
           <Route exact path="/produtos" element={<AllProdutos />} />
           <Route exact path="/produtos/:id" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
 
-          {admin && <Route exact path="/admin" element={<Administrador />} />}
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
 
 

@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { TextField, Button, Container, Typography } from "@material-ui/core";
 import { api } from "../../service/api";
-import { form, Jumbotron, Image, Modal, Spinner } from "react-bootstrap";
 
 function NewProduto() {
   const [nome, setNome] = useState();
@@ -40,7 +39,6 @@ var data = {
 
         <form
           onSubmit={(event) => {
-            event.preventDefault();
             cadastrar();
           }}
         >
