@@ -1,6 +1,7 @@
 import { Imgbx } from "./style";
 import left from '../../assets/img/leftovers.png'
 import React from "react";
+console.log("oi")
 
 
 
@@ -26,7 +27,6 @@ export function Produto(props) {
                 </div>
             </div>
         </Imgbx>
-
 
     )
 
