@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Imgbx = styled.div`
 
+#poke{
+    width:55%;
+    height:65%;
+}
 
 margin-top: 3rem;
 margin-left: 9rem;
@@ -12,7 +16,7 @@ display: inline-block;
   position: relative;
   width: 263.6px;
   height: 374.75px;
-  background: #0078FF;
+  background: #6D398A;
   border-radius: 20px;
   overflow: hidden;
 }
