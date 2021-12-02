@@ -1,33 +1,20 @@
 import React, { } from "react";
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { Produto } from "../components/Produto";
-import { useState, useEffect } from "react";
-import { api } from "../service/api";
+
+import { Main } from "../components/Main";
+
+
+
 
 export function Home() {
-  const [pokemon, setPokemon] = useState([])
-
-  useEffect(() => {
-
-    api.get('/produtos')
-      .then(banana => setPokemon(banana.data))
-
-  }, [])
-
-  console.log(pokemon)
-
 
   return (
     <>
       <Header />
-      <div>
-        {
-          pokemon.map(produto => {
-            return <Produto key={produto.nome} produto={produto} />
+      <Main />
+      <Footer />
 
-          })
-        }
-      </div>
     </>
   )
 
