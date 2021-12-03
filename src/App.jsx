@@ -7,7 +7,6 @@ import Pagina404 from "./paginas/pagina404/Pagina404";
 import { Home } from "./paginas/Home";
 import AllProdutos from "./paginas/produtos/AllProdutos";
 import Produto from "./paginas/produtos/Produto"
-import BemVindo from "./paginas/BemVindo";
 import { GlobalStyle } from "./styles/global";
 
 import { Header } from "./components/Header"
@@ -15,6 +14,7 @@ import NewProduto from "./paginas/admin/NewProduto";
 import Administrador from "./paginas/admin/Administrador";
 import { Carrinho } from "./paginas/cart/Carrinho";
 import { Sobre } from "./paginas/Sobre";
+import DeletarProduto from "./paginas/admin/DeletarProduto";
 
 
 
@@ -46,6 +46,8 @@ function App() {
           {!carrinho && <Route path="/carrinho" element={<Login />} />}
           {admin && <Route exact path="/admin" element={<Administrador />} />}
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
+          {admin && <Route exact path="/admin/remove" element={<DeletarProduto />} />}
+
 
         </Routes>
       </BrowserRouter>

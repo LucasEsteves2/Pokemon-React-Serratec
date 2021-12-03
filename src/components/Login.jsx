@@ -43,9 +43,9 @@ function Login({ aoEnviar }) {
         console.log("Voce se conectou na conta de Cliente");
         history("/");
       } else {
+        localStorage.setItem('acesso', data.acesso)
         console.log("Bem vindo ADM");
         setAcesso(data.acesso)
-        localStorage.setItem('acesso', data.acesso)
         history("/admin");
       }
     } catch {

@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { TextField, Button, Container, Typography } from "@material-ui/core";
 import { api } from "../../service/api";
+import {Header} from "../../components/Admin/"
 
 function NewProduto() {
   const [nome, setNome] = useState();
@@ -15,12 +16,21 @@ var data = {
     urlImagem: img
 }
 
+function limparForm()
+{
+  setNome("");
+  setDescricao("");
+  setPreco("");
+  setImg("");
+
+}
+
 
   async function cadastrar() {
       try{
           api.post("/produtos",data)
           alert("PRODUTO CADASTRADO COM SUCESSO")
-
+          limparForm()
       }
       catch{
           alert("PRODUTO NAO FOI CADASTRADO")
@@ -29,6 +39,8 @@ var data = {
 
   return (
     <>
+
+    <Header />
       <Container component="article" maxWidth="sm">
         <br />
         <br />
@@ -39,6 +51,7 @@ var data = {
 
         <form
           onSubmit={(event) => {
+            event.preventDefault()
             cadastrar();
           }}
         >

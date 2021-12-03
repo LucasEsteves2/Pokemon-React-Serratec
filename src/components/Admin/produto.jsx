@@ -1,12 +1,12 @@
-import { Imgbx } from "./style";
+import { Imgbx } from "./styleProduto";
 import left from "../../assets/img/leftovers.png";
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { Snackbar , Button,IconButton,Stack } from "@material-ui/core";
 import { Cancel } from "@material-ui/icons"
-
 import MuiAlert from "@material-ui/lab/Alert";
+import {api} from "../../service/api"
+
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -19,7 +19,8 @@ export function Produto(props) {
     preço: props.produto.valor,
     inCart: 0,
     url: props.produto.urlImagem,
-    desc: props.produto.desc
+    desc: props.produto.desc,
+    id: props.produto.id
   });
 
   
@@ -30,28 +31,42 @@ export function Produto(props) {
   useEffect(() => {
     console.log("fui clicado")
     setQtdCarrinho2(localStorage.getItem("carrinho"));
+   
   }, [qtdCarrinho2]);
 
-  function comprar() {
+  async function comprar() {
 
-    var loguei = localStorage.getItem("username")
+    var eoq = protudoCarrinho.id
+    try{
+       await api.delete(`/produtos/${eoq}` )
+      const {data} = await api.get("/produtos")
+      setProdutoCarrinho({
+        nome: data.nome,
+        preço: data.valor,
+        inCart: 0,
+        url: data.urlImagem,
+        desc: data.desc,
+        id: data.id
+      })
 
-    if(loguei!=null)
-    {
-      carrinho(protudoCarrinho);
-      valorFinal(protudoCarrinho);
       handleClick()
+      
+
     }
-  else{
-      alert("Voce deve estar logado para poder comprar um produto")
-      history("/login");
-      localStorage.clear();
-  }
+    catch{
+      alert("falha ao deletar")
+    }
   
-
-
-
   }
+
+  function apagar() {
+
+    var node = document.getElementById("container1");
+if (node.parentNode) {
+node.parentNode.removeChild(node);
+}
+  }
+
 
   function carrinho(produtinho) {
     let produto = localStorage.getItem("carrinho");
@@ -150,12 +165,12 @@ export function Produto(props) {
                 </h3>
                 <br/> <br/> <br/>
               </div>
-              <a onClick={comprar} className="btnComprar">Comprar</a>
+              <a onClick={comprar} className="btnComprar">Remover</a>
               <div>
     
               <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-         Produto adicionado ao carrinho
+         Produto Removido!!
         </Alert>
       </Snackbar>
     </div>
