@@ -19,12 +19,11 @@ function Login({ aoEnviar }) {
     try {
       var { headers } = await api.post(`/login`, data);
 
-      getAcesso();
-
       console.log(headers.authorization);
       localStorage.setItem("username", username);
       localStorage.setItem("token", headers.authorization);
-      history("/");
+      getAcesso();
+
     } catch {
       alert("Usuario Invalido!!");
       setUsername("");
@@ -36,13 +35,18 @@ function Login({ aoEnviar }) {
     try {
       var { data } = await api.get(`/clientes/email?value=${username}`);
 
+
+      localStorage.setItem('id', data.id)
+
+
       if (data.acesso == null) {
         console.log("Voce se conectou na conta de Cliente");
+        history("/");
       } else {
         console.log("Bem vindo ADM");
         setAcesso(data.acesso)
         localStorage.setItem('acesso', data.acesso)
-
+        history("/admin");
       }
     } catch {
       alert("DEU RUIM");

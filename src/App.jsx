@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./paginas/login/Login"
 import Cadastro from "./paginas/cadastro/Cadastro";
 import Pagina404 from "./paginas/pagina404/Pagina404";
@@ -18,28 +18,30 @@ import { Carrinho } from "./paginas/cart/Carrinho";
 
 
 function App() {
+  const [admin,setAdmin] = useState();
 
-  const logado = localStorage.getItem("username")
-  const admin = localStorage.getItem("acesso")
+  useEffect(() => {
+    setAdmin(localStorage.getItem("acesso"))
+
+}, [admin])
+
   const carrinho = localStorage.getItem("carrinho")
-
 
   return (
     <>
       <GlobalStyle />
       <BrowserRouter>
-
         <Routes>
           <Route exact path="/cadastro" element={<Cadastro />} />
           <Route exact path="/login" element={<Login />} />
-          {!admin && <Route exact path="/" element={<Home />} />}
-          {admin && <Route exact path="/" element={<Administrador />} />}
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/produtos" element={<AllProdutos />} />
           <Route exact path="/produtos/:id" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
 
-         {carrinho && <Route path="/carrinho" element={<Carrinho/>} />}
-
+          {carrinho && <Route path="/carrinho" element={<Carrinho/>} />}
+          {!carrinho && <Route path="/carrinho" element={<Login  />} />}
+          {admin && <Route exact path="/admin" element={<Administrador />} />}
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
 
         </Routes>
@@ -48,7 +50,4 @@ function App() {
   );
 
 }
-
-
-
 export default App;

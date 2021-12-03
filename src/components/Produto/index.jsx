@@ -1,6 +1,9 @@
 import { Imgbx } from "./style";
 import left from "../../assets/img/leftovers.png";
 import React, { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+
 
 export function Produto(props) {
   const [protudoCarrinho, setProdutoCarrinho] = useState({
@@ -11,15 +14,35 @@ export function Produto(props) {
     desc: props.produto.desc
   });
 
-  const [qtdCarrinho2, setQtdCarrinho] = useState();
-
+  
+  const [qtdCarrinho2, setQtdCarrinho2] = useState();
+  const [logado,setLogado] = useState();
+  const history = useNavigate();
+  
   useEffect(() => {
-    setQtdCarrinho(localStorage.getItem("carrinho"));
+    console.log("fui clicado")
+    setQtdCarrinho2(localStorage.getItem("carrinho"));
   }, [qtdCarrinho2]);
 
   function comprar() {
-    carrinho(protudoCarrinho);
-    valorFinal(protudoCarrinho);
+
+    var loguei = localStorage.getItem("username")
+
+    if(loguei!=null)
+    {
+      carrinho(protudoCarrinho);
+      valorFinal(protudoCarrinho);
+      alert("Produto adicionado ao carrinho")
+    }
+  else{
+      alert("Voce deve estar logado para poder comprar um produto")
+      history("/login");
+      localStorage.clear();
+  }
+  
+
+
+
   }
 
   function carrinho(produtinho) {
@@ -33,7 +56,7 @@ export function Produto(props) {
     }
 
     qtdCarrinho(produtinho);
-    setQtdCarrinho(localStorage.getItem("carrinho"));
+    setQtdCarrinho2(localStorage.getItem("carrinho"));
   }
 
   function qtdCarrinho(produtinho) {

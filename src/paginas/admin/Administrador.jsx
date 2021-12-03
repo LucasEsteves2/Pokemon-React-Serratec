@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Container, Content, TextoNav } from "../../components/Header/style";
+import { Container, Content, TextoNav } from "../../components/Header/style.js";
 import logoImg from '../../assets/poke-store.png'
 import { Link } from "react-router-dom";
 
