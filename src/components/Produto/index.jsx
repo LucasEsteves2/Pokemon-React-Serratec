@@ -3,6 +3,14 @@ import left from "../../assets/img/leftovers.png";
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { Snackbar , Button,IconButton,Stack } from "@material-ui/core";
+import { Cancel } from "@material-ui/icons"
+
+import MuiAlert from "@material-ui/lab/Alert";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 
 export function Produto(props) {
@@ -32,7 +40,7 @@ export function Produto(props) {
     {
       carrinho(protudoCarrinho);
       valorFinal(protudoCarrinho);
-      alert("Produto adicionado ao carrinho")
+      handleClick()
     }
   else{
       alert("Voce deve estar logado para poder comprar um produto")
@@ -93,6 +101,39 @@ export function Produto(props) {
     }
   }
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+
+
+  
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        Fechar
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <Cancel fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
   return (
     <>
       <Imgbx>
@@ -110,7 +151,14 @@ export function Produto(props) {
               </div>
 
               <a onClick={comprar} className="btnComprar">Comprar</a>{" "}
-
+              <div>
+    
+              <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+         Produto adicionado ao carrinho
+        </Alert>
+      </Snackbar>
+    </div>
             </div>
           </div>
         </div>
