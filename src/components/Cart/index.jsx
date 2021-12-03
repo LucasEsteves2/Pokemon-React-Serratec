@@ -2,6 +2,7 @@ import React from "react";
 import './style.scss';
 import Anuncio from "./Anuncio";
 import {api} from "../../service/api"
+import { useNavigate } from "react-router-dom";
 
 export function CarrinhoCompras () {
     
@@ -9,15 +10,18 @@ export function CarrinhoCompras () {
     let qtd = localStorage.getItem("carrinho");
     let subtotal = localStorage.getItem("ValorTotal");
     itensCarrinho = JSON.parse(itensCarrinho);
-    
+    const history = useNavigate();
+
 
 
     function limparCarrinho() {
         localStorage.removeItem("produtoCarrinho");
         localStorage.removeItem("carrinho");
         localStorage.removeItem("ValorTotal");
-        window.location.reload();
+        history("/");
+
         alert("SEU CARRINHO FOI LIMPADINHO");
+
       }
 
       function apagar() {
