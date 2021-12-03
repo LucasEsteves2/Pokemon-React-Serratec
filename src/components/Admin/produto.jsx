@@ -39,16 +39,7 @@ export function Produto(props) {
     var eoq = protudoCarrinho.id
     try{
        await api.delete(`/produtos/${eoq}` )
-      const {data} = await api.get("/produtos")
-      setProdutoCarrinho({
-        nome: data.nome,
-        preço: data.valor,
-        inCart: 0,
-        url: data.urlImagem,
-        desc: data.desc,
-        id: data.id
-      })
-
+    
       handleClick()
       
 
@@ -59,80 +50,24 @@ export function Produto(props) {
   
   }
 
-  function apagar() {
-
-    var node = document.getElementById("container1");
-if (node.parentNode) {
-node.parentNode.removeChild(node);
-}
-  }
-
-
-  function carrinho(produtinho) {
-    let produto = localStorage.getItem("carrinho");
-    produto = parseInt(produto);
-
-    if (produto) {
-      localStorage.setItem("carrinho", produto + 1);
-    } else {
-      localStorage.setItem("carrinho", 1);
-    }
-
-    qtdCarrinho(produtinho);
-    setQtdCarrinho2(localStorage.getItem("carrinho"));
-  }
-
-  function qtdCarrinho(produtinho) {
-    let itensCarrinho = localStorage.getItem("produtoCarrinho");
-    itensCarrinho = JSON.parse(itensCarrinho);
-
-    //se o carrinho nao estive fazio
-    if (itensCarrinho != null) {
-      if (itensCarrinho != undefined) {
-        itensCarrinho = {
-          ...itensCarrinho,
-          [produtinho.nome]: produtinho,
-        };
-      }
-      itensCarrinho[produtinho.nome].inCart += 1;
-    } else {
-      produtinho.inCart = 1;
-      itensCarrinho = {
-        [produtinho.nome]: produtinho,
-      };
-    }
-
-    localStorage.setItem("produtoCarrinho", JSON.stringify(itensCarrinho));
-  }
-
-  function valorFinal(produtinho) {
-    let valorTotal = localStorage.getItem("ValorTotal");
-
-    if (valorTotal != null) {
-      valorTotal = parseInt(valorTotal);
-      localStorage.setItem("ValorTotal", valorTotal + produtinho.preço);
-    } else {
-      localStorage.setItem("ValorTotal", produtinho.preço);
-    }
-  }
 
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
     setOpen(true);
+    document.location.reload(true);
   };
 
+  
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
-
     setOpen(false);
   };
 
 
 
-  
   const action = (
     <React.Fragment>
       <Button color="secondary" size="small" onClick={handleClose}>
@@ -170,7 +105,7 @@ node.parentNode.removeChild(node);
     
               <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-         Produto Removido!!
+        {props.produto.nome} Removido!!
         </Alert>
       </Snackbar>
     </div>

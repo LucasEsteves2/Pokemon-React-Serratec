@@ -7,7 +7,7 @@ import { sliderItems } from "./data";
 import { mobile } from "./responsive";
 
 const Container = styled.div`
-margin-top: 2rem;
+margin-top: 0rem;
 img{
   height: 60%;
   width: 100%;

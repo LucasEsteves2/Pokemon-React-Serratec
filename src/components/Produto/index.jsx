@@ -155,7 +155,7 @@ export function Produto(props) {
     
               <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-         Produto adicionado ao carrinho
+         {props.produto.nome} adicionado ao carrinho
         </Alert>
       </Snackbar>
     </div>

@@ -101,7 +101,7 @@ export function Header(props) {
                 </div>
             </Container>
 
-            <Carrossel />
+         
 
 
 

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import './style.scss';
 import Anuncio from "./Anuncio";
 import {api} from "../../service/api"
 import { useNavigate } from "react-router-dom";
 
 export function CarrinhoCompras () {
+  const [usuario,setUsuario] =useState({
+  })
+  const [id,setId]=useState(localStorage.getItem('id'))
     
     let itensCarrinho = localStorage.getItem("produtoCarrinho");
     let qtd = localStorage.getItem("carrinho");
@@ -20,16 +23,13 @@ export function CarrinhoCompras () {
         localStorage.removeItem("ValorTotal");
         history("/");
 
-        alert("SEU CARRINHO FOI LIMPADINHO");
+        alert("Seu carrinho foi limpado");
 
       }
 
-      function apagar() {
-
-        var node = document.getElementById("conteudo");
-if (node.parentNode) {
-  node.parentNode.removeChild(node);
-}
+      function apagar (id)  {
+        let pessoa = document.getElementById(id);
+        console.log(pessoa)
       }
 function cupom()
 {
@@ -40,15 +40,21 @@ async function finalizarCompra()
 {
   alert("Parabens compra finalizada")
 
+
+  const itemzinhi = {
+ 
+  }
+
+
   try{
-    
+  
     const {data} = await api.post(`/pedidos`, {
-      
-      cliente : {"id" : 1}, 
+
+
+      cliente : {"id" : id}, 
       enderecoDeEntrega : {"id" : 1}, 
       pagamento : { "numeroDeParcelas" : 10, "@type": "pagamentoComCartao" }, 
-      itens : [ { quantidade : 2, produto : {id : 4} }, 
-        { quantidade : 1, produto: {id : 4} } ] 
+      itens : [ itemzinhi ] 
       }
      
   
@@ -66,17 +72,17 @@ return (
         
         <Anuncio/>
     <div class="wrap cf">
-  <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>
+  <h1 class="projTitle">Relatorio<span>-De</span> Compras</h1>
   <div class="heading cf">
     <h1>Meu Carrinho</h1>
     <a href="#"  onClick={limparCarrinho}class="continue">Limpar Carrinho</a>
   </div>
   <div class="cart">
    <ul class="tableHead">
-      <li class="prodHeader">Product</li>
-      <li>Quantity</li>
+      <li class="prodHeader">Produto</li>
+      <li>Quantidade</li>
       <li>Total</li>
-       <li>Remove</li>
+       <li>Remover</li>
     </ul>
   
     <ul class="cartWrap">
@@ -90,14 +96,17 @@ return (
              <img src={produtos.url} alt="" class="itemImg" />
                <p class="itemNumber">Categoria: {produtos.desc}</p>
                <h3>{produtos.nome}</h3>
-                <p> <input type="text"  class="qty" placeholder={produtos.inCart}/>x R$ {produtos.preço}</p>
+                <p> <input type="text"  disabled class="qty" placeholder={produtos.inCart}/>x R$ {produtos.preço}</p>
                <p class="stockStatus"> Em Estoque</p>
              </div> 
              <div class="prodTotal cartSection">
                <p>R$ {produtos.preço * produtos.inCart}</p>
              </div>
-                   <div class="cartSection removeWrap">
-                <a onClick={apagar} class="remove">X</a>
+                  <div class="cartSection removeWrap">
+                   <article  onClick={apagar(produtos.id)} key={produtos.id}>
+                <a class="remove">X</a>
+                </article>
+
              </div>
            </div>
            </li>
