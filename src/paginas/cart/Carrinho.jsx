@@ -1,9 +1,10 @@
 import React from "react";
-import Cart from "../../components/Cart/Cart";
+import { CarrinhoCompras } from "../../components/Cart";
 
 export function Carrinho() {
   return(
     
-    <Cart/>
+    <CarrinhoCompras/>
+
     );
 }

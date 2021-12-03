@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Anuncio = () => {
-  return <Container>Super Deal! Free Shipping on Orders Over $50</Container>;
+  return <Container>Super oferta! Utilize o cupom "CLAUDINHO MADEIRADA" e ganhe 10% off</Container>;
 };
 
 export default Anuncio;

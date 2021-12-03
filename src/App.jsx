@@ -38,7 +38,7 @@ function App() {
           <Route exact path="/produtos/:id" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
 
-         {carrinho && <Route path="/carrinho" element={<Carrinho />} />}
+         {carrinho && <Route path="/carrinho" element={<Carrinho/>} />}
 
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
 
