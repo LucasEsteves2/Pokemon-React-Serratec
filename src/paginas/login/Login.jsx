@@ -3,15 +3,14 @@ import DadosUsuario from "../../components/FormularioCadastro/DadosUsuario";
 import { Container, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Logiin from '../../components/Login';
+import pikach from '../../assets/login.png'
 
 function Login() {
   return (
     <>
       <Container component="article" maxWidth="sm">
         <br />
-        <Typography variant="h4" component="h1" align="center">
-          LOGIN
-        </Typography>
+        <img src={pikach} alt="login" />
         <Logiin />
         <br /> <br />
         <Link to="/cadastro">

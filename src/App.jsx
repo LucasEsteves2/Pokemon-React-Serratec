@@ -14,16 +14,17 @@ import { Header } from "./components/Header"
 import NewProduto from "./paginas/admin/NewProduto";
 import Administrador from "./paginas/admin/Administrador";
 import { Carrinho } from "./paginas/cart/Carrinho";
+import { Sobre } from "./paginas/Sobre";
 
 
 
 function App() {
-  const [admin,setAdmin] = useState();
+  const [admin, setAdmin] = useState();
 
   useEffect(() => {
     setAdmin(localStorage.getItem("acesso"))
 
-}, [admin])
+  }, [admin])
 
   const carrinho = localStorage.getItem("carrinho")
 
@@ -32,15 +33,17 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
+
           <Route exact path="/cadastro" element={<Cadastro />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/sobre" element={<Sobre />} />
           <Route exact path="/" element={<Home />} />
           <Route exact path="/produtos" element={<AllProdutos />} />
           <Route exact path="/produtos/:id" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
 
-          {carrinho && <Route path="/carrinho" element={<Carrinho/>} />}
-          {!carrinho && <Route path="/carrinho" element={<Login  />} />}
+          {carrinho && <Route path="/carrinho" element={<Carrinho />} />}
+          {!carrinho && <Route path="/carrinho" element={<Login />} />}
           {admin && <Route exact path="/admin" element={<Administrador />} />}
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
 
