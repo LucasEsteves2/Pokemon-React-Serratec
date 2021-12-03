@@ -8,7 +8,7 @@ export function Produto(props) {
     preço: props.produto.valor,
     inCart: 0,
     url: props.produto.urlImagem,
-    desc:props.produto.desc
+    desc: props.produto.desc
   });
 
   const [qtdCarrinho2, setQtdCarrinho] = useState();
@@ -73,22 +73,21 @@ export function Produto(props) {
   return (
     <>
       <Imgbx>
-        <div class="container1">
-          <div class="card" id="Muscle">
-            <div class="imgBx">
+        <div className="container1">
+          <div className="card" id="Muscle">
+            <div className="imgBx">
               <img id="poke" src={props.produto.urlImagem} />
             </div>
-            <div class="contentBx">
+            <div className="contentBx">
               <h2>{props.produto.nome}</h2>
-              <div class="color">
+              <div className="color">
                 <h3>
-                  <strong class="valor"> {props.produto.valor}</strong>
+                  <strong className="valor"> {props.produto.valor}</strong>
                 </h3>
               </div>
-              <button onClick={comprar}>
-                {" "}
-                <a class="btnComprar">Comprar</a>{" "}
-              </button>
+
+              <a onClick={comprar} className="btnComprar">Comprar</a>{" "}
+
             </div>
           </div>
         </div>

@@ -9,19 +9,17 @@ export const Imgbx = styled.div`
     height:auto;
 }
 
-margin-top: 3rem;
-margin-left: 8.6rem;
+margin-top: 2rem;
+margin-left: 6.6rem;
 display: inline-block;
 
-&:last-child {
-  margin-right: 11rem;
-    
-    }
+
 
 .container1 .card{
+  box-shadow: 0px 0px 15px -5px;
   position: relative;
-  width: 263.6px;
-  height: 374.75px;
+  width: 203.6px;
+  height: 314.75px;
   background: #6D398A;
   border-radius: 20px;
   overflow: hidden;
@@ -40,7 +38,7 @@ display: inline-block;
 }
 
 .container1 .card:hover:before{
-  clip-path: circle(250px at 80% -21%);
+  clip-path: circle(250px at 80% -38%);
 }
 
 
@@ -56,7 +54,7 @@ display: inline-block;
 }
 
 .container1 .card:hover .imgBx{
-  top: -10%;
+  top: -16%;
   transform: translateY(0%);
     
 }
@@ -80,7 +78,7 @@ display: inline-block;
 }
 
 .container1 .card:hover .contentBx{
-  height: 188px;
+  height: 158px;
 }
 
 .container1 .card .contentBx h2{

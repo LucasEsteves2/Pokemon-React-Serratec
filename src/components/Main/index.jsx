@@ -1,5 +1,5 @@
 import React, { } from "react";
-import logoImg from '../../assets/poke-store.png'
+import logoImg from '../../assets/img/produtos.png'
 import { useState, useEffect } from "react";
 import { api } from "../../service/api";
 
@@ -23,7 +23,7 @@ export function Main() {
     <>
 
       <Imagemzinha>
-        <h1>Produtos</h1>
+        <img src={logoImg} alt="" />
       </Imagemzinha>
       <div>
         {

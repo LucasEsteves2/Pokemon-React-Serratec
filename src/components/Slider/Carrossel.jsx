@@ -7,9 +7,14 @@ import { sliderItems } from "./data";
 import { mobile } from "./responsive";
 
 const Container = styled.div`
-  margin-top: 0.1rem;
+margin-top: 2rem;
+img{
+  height: 60%;
   width: 100%;
-  height: 80vh;
+}
+box-shadow: 0px 0px 15px -5px;
+  width: 100%;
+  height: 60vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -52,34 +57,29 @@ const Slide = styled.div`
 
 const ImgContainer = styled.div`
   height: 100%;
+
   flex: 1;
 `;
 
 const Image = styled.img`
-  height: 92%;
+  height: 100%;
+
 `;
 
 const InfoContainer = styled.div`
-  flex: 1;
-  padding: 50px;
+
 `;
 
 const Title = styled.h1`
-  font-size: 70px;
+
 `;
 
 const Desc = styled.p`
-  margin: 50px 0px;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 3px;
+
 `;
 
 const Button = styled.button`
-  padding: 10px;
-  font-size: 20px;
-  background-color: transparent;
-  cursor: pointer;
+
 `;
 
 const Carrossel = () => {
@@ -103,11 +103,6 @@ const Carrossel = () => {
             <ImgContainer>
               <Image src={item.img} />
             </ImgContainer>
-            <InfoContainer>
-              <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
-            </InfoContainer>
           </Slide>
         ))}
       </Wrapper>

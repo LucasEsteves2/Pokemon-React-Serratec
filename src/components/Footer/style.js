@@ -6,6 +6,7 @@ background:var(--amarelo);
 bottom: 0;
 display: flex;
 margin-top: 5rem;
+box-shadow: 0px 0px 15px -5px;
 
 li{
     margin: 1rem;
