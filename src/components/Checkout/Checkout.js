@@ -67,6 +67,8 @@ export default function Checkout() {
     const history = useNavigate();
 
     return (
+
+        
         <Grid container className={classe.container}>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classe.carSide}>
                 <div>
@@ -259,5 +261,8 @@ export default function Checkout() {
                 </Grid>
             </Grid>
         </Grid>
+
+
+
     );
 }

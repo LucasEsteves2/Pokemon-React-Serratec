@@ -29,10 +29,18 @@ function App() {
     setCarrinho(localStorage.getItem("carrinho"))
   }, [admin])
 
+  useEffect(() => {
+    setAdmin(localStorage.getItem("acesso"))
+    setCarrinho(localStorage.getItem("carrinho"))
+  }, [admin])
+
+
+
 
   return (
     <>
 <CartProvider> 
+  
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
@@ -44,8 +52,7 @@ function App() {
           <Route exact path="/produtos" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
 
-          {carrinho && <Route path="/carrinho" element={<Carrinho />} />}
-          {!carrinho && <Route path="/carrinho" element={<Login />} />}
+          <Route path="/carrinho" element={<Carrinho />} />
           {admin && <Route exact path="/admin" element={<Administrador />} />}
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
           {admin && <Route exact path="/admin/remove" element={<DeletarProduto />} />}
