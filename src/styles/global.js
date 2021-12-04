@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components";
+import 'react-credit-cards/es/styles-compiled.css';
+
 export const GlobalStyle = createGlobalStyle`
 
 :root{
@@ -57,6 +59,39 @@ button{
 }
 
 
+
+
+
+
+.hasError {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: 'Verdana Regular';
+    font-size: 13px
+}
+
+.rccs {
+    width: 364px;
+    height: 224px;
+}
+
+.rccs__card {    
+    width: 364px;
+    height: 224px;
+}
+
+@media only screen and (max-width: 414px) {
+  .rccs {
+    width: 290px;
+    height: 182px;
+}
+
+.rccs__card {    
+    width: 290px;
+    height: 182px;
+}
+}
 
 
 `

@@ -15,6 +15,8 @@ import Administrador from "./paginas/admin/Administrador";
 import { Carrinho } from "./paginas/cart/Carrinho";
 import { Sobre } from "./paginas/Sobre";
 import DeletarProduto from "./paginas/admin/DeletarProduto";
+import { Comprovante} from "./paginas/Checkout/Comprovante";
+import { Pagamento } from "./paginas/Checkout/Pagamento";
 
 
 
@@ -46,6 +48,10 @@ function App() {
           {admin && <Route exact path="/admin" element={<Administrador />} />}
           {admin && <Route exact path="/admin/produtos" element={<NewProduto />} />}
           {admin && <Route exact path="/admin/remove" element={<DeletarProduto />} />}
+
+          {carrinho && <Route path="/carrinho/pagamento" element={<Pagamento />} />}
+          {carrinho && <Route path="/carrinho/comprovante" element={<Comprovante />} />}
+
 
 
         </Routes>

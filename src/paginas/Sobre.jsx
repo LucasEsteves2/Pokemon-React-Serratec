@@ -6,8 +6,6 @@ import { MainSobre } from "../components/MainSobre";
 
 
 
-
-
 export function Sobre() {
 
     return (
@@ -15,7 +13,6 @@ export function Sobre() {
             <Header />
             <MainSobre />
             <Footer />
-
         </>
     )
 }

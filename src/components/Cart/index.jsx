@@ -5,21 +5,15 @@ import {api} from "../../service/api"
 import { useNavigate } from "react-router-dom";
 
 export function CarrinhoCompras () {
-  const [usuario,setUsuario] =useState({
-  })
-  const [id,setId]=useState(localStorage.getItem('id'))
+  
   const [desconto,setDesconto] = useState()  
   const [subtotal,setSubtotal] =useState((localStorage.getItem("ValorTotal")))
   const [total,setTotal] =useState((localStorage.getItem("ValorTotal")))
   const [cupomzinhoo,setCupomzinhoo] = useState("- -")
 
-
     let itensCarrinho = localStorage.getItem("produtoCarrinho");
-    let qtd = localStorage.getItem("carrinho");
     itensCarrinho = JSON.parse(itensCarrinho);
-    
-    const finall=0
-    const history = useNavigate();
+     const history = useNavigate();
 
 
 
@@ -50,11 +44,11 @@ else
   const descontinho2= desscontinho.toUpperCase()  
   if(descontinho2 == "CLAUDINHO MADEIRADA")
   {
-    alert("é o cupomzinho do claudinho madeirada")
     alert("cupom de 10% off aplicado")
     var descontoe= (total-total*10/100);
     setTotal(descontoe)
 
+    localStorage.setItem('ValorTotal',descontoe)
     setCupomzinhoo("-10%")
   }
   else{
@@ -65,30 +59,7 @@ else
 
 async function finalizarCompra()
 {
-  alert("Parabens compra finalizada")
-
-
-  const itemzinhi = {
- 
-  }
-
-
-  try{
-  
-    const {data} = await api.post(`/pedidos`, {
-
-
-      cliente : {"id" : id}, 
-      enderecoDeEntrega : {"id" : 1}, 
-      pagamento : { "numeroDeParcelas" : 10, "@type": "pagamentoComCartao" }, 
-      itens : [ itemzinhi ] 
-      }
-     
-  
-  )
-     } catch{
-    alert("DEU MERDA ")
-  }
+  history("/carrinho/pagamento")
 
 }
 
