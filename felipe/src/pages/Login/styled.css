@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300');
+
+body {
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: colors;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  
+}
+
+@keyframes colors {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+
+}
+
+.App {
+  background: #27282d;
+  height: 340px;
+  width: 520px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 30px -5px rgba(0,0,0,0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  animation: ease-in;
+  overflow: hidden;
+  
+}
+
+.App:hover {
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+    transform: scale(1.1);
+    border-radius: 30px;
+}
+
+
+.input-container {
+  position: relative;
+  margin-bottom: 30px;
+  width: 340px;
+}
+
+input, button {
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 1.3px;
+}
+
+input {
+  box-sizing: border-box;
+  background: transparent;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid lighten(#27282d, 25%);
+  color: lighten(#27282d, 65%);
+  padding: 12px 6px 12px 36px;
+  font-size: 19px;
+  outline: none;
+  caret-color: rgb(229, 91, 141);
+}
+
+input:focus {
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(140deg, rgb(219, 98, 65) 0%, rgb(229, 91, 141) 100%);
+  border-image-slice: 1;
+}
+
+input:focus + i {
+  color: lighten(#27282d, 65%);
+}
+
+::placeholder{
+    color: lighten(#27282d, 65%);
+    opacity: .4; 
+  }
+
+i{
+  color: lighten(#27282d, 25%);
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 5s;
+ 
+}
+
+button {
+  background: lighten(#27282d, 5%);
+  border: none;
+  border-radius: 30px ;
+  color: lighten(#27282d, 65%);
+  font-size: 16px;
+  padding: 16px 36px;
+  cursor: pointer;
+  transition: all .3s;
+  margin-top: 20px;
+  margin-bottom: -30px;
+  box-shadow: 0px 4px 15px -5px rgba(0,0,0,0.65);
+  transition: all .3s;
+}
+
+button:hover {
+  background: lighten(#27282d, 10%);
+  box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.65);
+}
+
+@media screen and (max-width: 620px) {
+  
+  .App {
+    min-height: 300px;
+    max-height: 420px;
+    width: 90vw;
+  }
+
+  .input-container {
+    width: 80%;
+    margin-bottom: 40px;
+  }
+
+  button {
+    margin-top: 10px;
+    margin-bottom: -20px;
+  }
+}
+
+.arcanine {
+  width: 100px;
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  
+}
+
+.buba {
+  width: 100px;
+  position: absolute;
+  left: 50px;
+  top: 500px;
+}
+
+.chari {
+  width: 200px;
+  position: absolute;
+  right: 50px;
+  top: 30px;
+}
+
+.eve {
+  width: 250px;
+  position: absolute;
+  left: 300px;
+  top: 500px;
+}
+
+.lugi {
+  width: 200px;
+  position: absolute;
+  left: 150px;
+  top: 250px;
+}
+
+.mewt {
+  width: 100px;
+  position: absolute;
+  left: 800px;
+  top: 30px;
+}
+
+.pika {
+  width: 100px;
+  position: absolute;
+  left: 400px;
+  top: 30px;
+}
+
+.squi {
+  width: 150px;
+  position: absolute;
+  right: 200px;
+  top: 300px;
+}
+
+.umbre {
+  width: 100px;
+  position: absolute;
+  left: 1200px;
+  top: 480px;
+}
+
+.aron {
+  width: 100px;
+  position: absolute;
+  left: 750px;
+  top: 550px;
+}
