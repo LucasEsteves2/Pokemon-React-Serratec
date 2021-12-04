@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./paginas/login/Login"
-import Cadastro from "./paginas/cadastro/Cadastro";
-import Pagina404 from "./paginas/pagina404/Pagina404";
+import Login from "./pages/login/Login"
+import Cadastro from "./pages/cadastro/Cadastro";
+import {Pagina404} from "./pages/pagina404/Pagina404";
 
-import { Home } from "./paginas/Home";
-import AllProdutos from "./paginas/produtos/AllProdutos";
-import {Produto} from "./paginas/produtos/Produto"
+import { Home } from "./pages/Home";
+import AllProdutos from "./pages/produtos/AllProdutos";
+import {Produto} from "./pages/produtos/Produto"
 import { GlobalStyle } from "./styles/global";
 
 import { Header } from "./components/Header"
-import NewProduto from "./paginas/admin/NewProduto";
-import Administrador from "./paginas/admin/Administrador";
-import { Carrinho } from "./paginas/cart/Carrinho";
-import { Sobre } from "./paginas/Sobre";
-import DeletarProduto from "./paginas/admin/DeletarProduto";
-import { Comprovante} from "./paginas/Checkout/Comprovante";
-import { Pagamento } from "./paginas/Checkout/Pagamento";
-
+import NewProduto from "./pages/admin/NewProduto";
+import Administrador from "./pages/admin/Administrador";
+import { Carrinho } from "./pages/cart/Carrinho";
+import { Sobre } from "./pages/Sobre";
+import DeletarProduto from "./pages/admin/DeletarProduto";
+import { Comprovante} from "./pages/Checkout/Comprovante";
+import { Pagamento } from "./pages/Checkout/Pagamento";
+import CartProvider from "./contexts/CartContext";
 
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
 
   return (
     <>
+<CartProvider> 
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
@@ -56,6 +57,7 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+      </CartProvider>
     </>
   );
 

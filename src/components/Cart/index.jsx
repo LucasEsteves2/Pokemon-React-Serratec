@@ -42,7 +42,7 @@ if(desscontinho ==null)
 else
 {  
   const descontinho2= desscontinho.toUpperCase()  
-  if(descontinho2 == "CLAUDINHO MADEIRADA")
+  if(descontinho2 == "YURAO DA MASSA")
   {
     alert("cupom de 10% off aplicado")
     var descontoe= (total-total*10/100);
@@ -116,7 +116,7 @@ return (
      
       
       {/* TERMINA AK COCUDO */}
-         <div class="special"><div class="specialContent">Utilize o cupom claudinho madeirada!!!</div></div>
+         <div class="special"><div class="specialContent">Utilize o cupom yurao da massa e ganhe 10% off</div></div>
       
       
  

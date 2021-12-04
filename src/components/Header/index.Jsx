@@ -8,9 +8,11 @@ import { Link } from "react-router-dom";
 import Carrossel from "../Slider/Carrossel";
 import { useNavigate } from "react-router-dom";
 import { CartProvider } from "../../contexts/CartContext/index.js";
+import { useCount } from "../../contexts/CartContext";
 
 
 export function Header(props) {
+    const {count,setCount} = useCount();
     const history = useNavigate();
     const [qtdCarrinho2, setQtdCarrinho2] = useState();
     const [texto, setTexto] = useState("");
@@ -18,7 +20,7 @@ export function Header(props) {
     useEffect(() => {
         
         logado()
-    setQtdCarrinho2(localStorage.getItem("carrinho"));
+        setCount(localStorage.getItem("carrinho"));
 
     }, [texto])
 
@@ -59,7 +61,7 @@ export function Header(props) {
         }
         else
         {
-            if(qtdCarrinho2)
+            if(count)
             {
                 
                 history("/carrinho");
@@ -96,7 +98,7 @@ export function Header(props) {
                 </Content>
                 <div id="longin">
                <div onClick={carrinho}>
-                    <img src={coin} alt="" />{qtdCarrinho2}
+                    <img src={coin} alt="" />{count}
                 
                 </div>
                     

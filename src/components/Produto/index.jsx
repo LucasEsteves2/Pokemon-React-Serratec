@@ -2,12 +2,10 @@ import { Imgbx } from "./style";
 import left from "../../assets/img/leftovers.png";
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { Snackbar , Button,IconButton,Stack } from "@material-ui/core";
 import { Cancel } from "@material-ui/icons"
-
 import MuiAlert from "@material-ui/lab/Alert";
-import { CartContext, CartProvider } from "../../contexts/CartContext";
+import { useCount } from "../../contexts/CartContext";
 
 
 
@@ -17,6 +15,8 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 
 export function Produto(props) {
+  const {count,setCount} = useCount();
+
   const [protudoCarrinho, setProdutoCarrinho] = useState({
     nome: props.produto.nome,
     preço: props.produto.valor,
@@ -46,6 +46,9 @@ export function Produto(props) {
       carrinho(protudoCarrinho);
       valorFinal(protudoCarrinho);
       handleClick()
+
+      setCount(localStorage.getItem("carrinho"))
+
     }
   else{
       alert("Voce deve estar logado para poder comprar um produto")
