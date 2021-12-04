@@ -14,6 +14,12 @@ li{
     display: inline-block;
 }
  
+.position{
+
+margin-left: 40rem;
+
+}
+
 `
 export const Imagem = styled.div`
 

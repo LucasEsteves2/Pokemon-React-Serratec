@@ -1,8 +1,9 @@
 import React, { createContext } from "react";
-import Categories from "../components/Categorias/Categories";
+
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import Carrossel from "../components/Slider/Carrossel";
+import { MainHome } from "../components/MainHome";
+
 
 
 
@@ -11,9 +12,9 @@ export function Home() {
 
   return (
     <>
-      <Header  />
-      <Carrossel/>
-      <Categories/>
+      <Header />
+
+      <MainHome />
 
       <Footer />
     </>

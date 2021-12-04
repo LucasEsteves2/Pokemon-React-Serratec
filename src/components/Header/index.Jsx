@@ -9,6 +9,7 @@ import Carrossel from "../Slider/Carrossel";
 import { useNavigate } from "react-router-dom";
 import { CartProvider } from "../../contexts/CartContext/index.js";
 import { useCount } from "../../contexts/CartContext";
+import Anuncio from "../Cart/Anuncio.jsx";
 
 
 export function Header(props) {
@@ -108,6 +109,7 @@ export function Header(props) {
                     <img src={pika} alt="pikachu" />
                 </div>
             </Container>
+            <Anuncio/>
 
          
 
