@@ -6,7 +6,7 @@ import Pagina404 from "./paginas/pagina404/Pagina404";
 
 import { Home } from "./paginas/Home";
 import AllProdutos from "./paginas/produtos/AllProdutos";
-import Produto from "./paginas/produtos/Produto"
+import {Produto} from "./paginas/produtos/Produto"
 import { GlobalStyle } from "./styles/global";
 
 import { Header } from "./components/Header"
@@ -38,8 +38,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/sobre" element={<Sobre />} />
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/produtos" element={<AllProdutos />} />
-          <Route exact path="/produtos/:id" element={<Produto />} />
+          <Route exact path="/produtos" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
 
           {carrinho && <Route path="/carrinho" element={<Carrinho />} />}

@@ -7,6 +7,9 @@ import { Snackbar , Button,IconButton,Stack } from "@material-ui/core";
 import { Cancel } from "@material-ui/icons"
 
 import MuiAlert from "@material-ui/lab/Alert";
+import { CartContext, CartProvider } from "../../contexts/CartContext";
+
+
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -22,10 +25,11 @@ export function Produto(props) {
     desc: props.produto.desc
   });
 
-  
   const [qtdCarrinho2, setQtdCarrinho2] = useState();
   const [logado,setLogado] = useState();
   const history = useNavigate();
+
+  
   
   useEffect(() => {
     console.log("fui clicado")
@@ -33,6 +37,7 @@ export function Produto(props) {
   }, [qtdCarrinho2]);
 
   function comprar() {
+
 
     var loguei = localStorage.getItem("username")
 
@@ -133,6 +138,7 @@ export function Produto(props) {
       </IconButton>
     </React.Fragment>
   );
+
 
   return (
     <>

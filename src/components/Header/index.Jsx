@@ -7,6 +7,7 @@ import coin from '../../assets/coin.svg';
 import { Link } from "react-router-dom";
 import Carrossel from "../Slider/Carrossel";
 import { useNavigate } from "react-router-dom";
+import { CartProvider } from "../../contexts/CartContext/index.js";
 
 
 export function Header(props) {
@@ -15,6 +16,7 @@ export function Header(props) {
     const [texto, setTexto] = useState("");
   
     useEffect(() => {
+        
         logado()
     setQtdCarrinho2(localStorage.getItem("carrinho"));
 
@@ -24,6 +26,7 @@ export function Header(props) {
     {
         if(texto=="Logout")
         {  
+    
              setTexto("login")
             localStorage.clear();
             alert("Volte sempre!")
@@ -58,6 +61,7 @@ export function Header(props) {
         {
             if(qtdCarrinho2)
             {
+                
                 history("/carrinho");
             }
             else{
@@ -69,8 +73,10 @@ export function Header(props) {
 
     }
 
-    return (
+    
 
+    return (
+        
         <>
             <Container>
                 <Content>

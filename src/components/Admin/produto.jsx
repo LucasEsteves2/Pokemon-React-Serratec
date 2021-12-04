@@ -39,10 +39,7 @@ export function Produto(props) {
     var eoq = protudoCarrinho.id
     try{
        await api.delete(`/produtos/${eoq}` )
-    
       handleClick()
-      
-
     }
     catch{
       alert("falha ao deletar")

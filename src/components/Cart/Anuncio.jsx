@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   height: 30px;
-  background-color: teal;
+  background-color: #8A33F7;
   color: white;
   display: flex;
   align-items: center;
@@ -14,7 +14,8 @@ const Container = styled.div`
 `;
 
 const Anuncio = () => {
-  return <Container>Super oferta! Utilize o cupom "CLAUDINHO MADEIRADA" e ganhe 10% off</Container>;
+  return <Container>SUPER OFERTA!!, FRETE GRATIS PARA TODAS AS COMPRAS
+  </Container>;
 };
 
 export default Anuncio;

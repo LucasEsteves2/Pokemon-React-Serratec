@@ -8,11 +8,17 @@ export function CarrinhoCompras () {
   const [usuario,setUsuario] =useState({
   })
   const [id,setId]=useState(localStorage.getItem('id'))
-    
+  const [desconto,setDesconto] = useState()  
+  const [subtotal,setSubtotal] =useState((localStorage.getItem("ValorTotal")))
+  const [total,setTotal] =useState((localStorage.getItem("ValorTotal")))
+  const [cupomzinhoo,setCupomzinhoo] = useState("- -")
+
+
     let itensCarrinho = localStorage.getItem("produtoCarrinho");
     let qtd = localStorage.getItem("carrinho");
-    let subtotal = localStorage.getItem("ValorTotal");
     itensCarrinho = JSON.parse(itensCarrinho);
+    
+    const finall=0
     const history = useNavigate();
 
 
@@ -33,7 +39,28 @@ export function CarrinhoCompras () {
       }
 function cupom()
 {
-  alert("é o cupomzinho do claudinho madeirada")
+
+  const desscontinho = desconto;
+if(desscontinho ==null)
+{
+  alert("CUPOM INVALIDO!!")
+}
+else
+{  
+  const descontinho2= desscontinho.toUpperCase()  
+  if(descontinho2 == "CLAUDINHO MADEIRADA")
+  {
+    alert("é o cupomzinho do claudinho madeirada")
+    alert("cupom de 10% off aplicado")
+    var descontoe= (total-total*10/100);
+    setTotal(descontoe)
+
+    setCupomzinhoo("-10%")
+  }
+  else{
+    alert("cupom invalido")
+  }
+}
 }
 
 async function finalizarCompra()
@@ -69,7 +96,6 @@ return (
       
         <>
 
-        
         <Anuncio/>
     <div class="wrap cf">
   <h1 class="projTitle">Relatorio<span>-De</span> Compras</h1>
@@ -119,24 +145,25 @@ return (
      
       
       {/* TERMINA AK COCUDO */}
-         <div class="special"><div class="specialContent">Free gift with purchase!, gift wrap, etc!!</div></div>
+         <div class="special"><div class="specialContent">Utilize o cupom claudinho madeirada!!!</div></div>
       
       
  
     </ul>
   </div>
   
-  <div class="promoCode"><label for="promo">Tem um código promocional?</label><input type="text" name="promo" placholder="Enter Code"  />
+  <div class="promoCode"><label for="promo">Tem um código promocional?</label>
+  <input type="text" name="promo" placholder="Enter Code" value={desconto} onChange={(e)=>{setDesconto(e.target.value)}}  />
   <a onClick={cupom} class="btn"></a></div>
   
   <div class="subtotal cf">
     <ul>
       <li class="totalRow"><span class="label">Subtotal</span><span class="value">R$ {subtotal}</span></li>
       
-          <li class="totalRow"><span class="label">Valor do Frete</span><span class="value">R$ 20,50</span></li>
+          <li class="totalRow"><span class="label">Valor do Frete</span><span class="value">GRATIS</span></li>
       
-            <li class="totalRow"><span class="label">Cupom</span><span class="value">$4.00</span></li>
-            <li class="totalRow final"><span class="label">Total</span><span class="value">R${subtotal}</span></li>
+            <li class="totalRow"><span class="label">Cupom</span><span class="value"> {cupomzinhoo} </span></li>
+            <li class="totalRow final"><span class="label">Total</span><span class="value">R${total}</span></li>
       <li class="totalRow"><a href="#" onClick={finalizarCompra} class="btn continue">Comprar</a></li>
     </ul>
   </div>

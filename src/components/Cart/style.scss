@@ -15,7 +15,9 @@ $fontSerif : 'Droid Serif', serif;
 *{ box-sizing:border-box;}
 
 
-
+li {
+  list-style-type: none;
+}
 body {
   color: #333;
   -webkit-font-smoothing: antialiased;
