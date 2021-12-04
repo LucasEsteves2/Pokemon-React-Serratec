@@ -5,7 +5,7 @@ background:var(--amarelo);
 
 bottom: 0;
 display: flex;
-margin-top: 5rem;
+margin-top: 15rem;
 box-shadow: 0px 0px 15px -5px;
 
 li{

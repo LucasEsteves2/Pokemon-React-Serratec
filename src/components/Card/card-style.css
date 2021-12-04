@@ -1,0 +1,65 @@
+body {
+    background: radial-gradient(#e5e5e5, #ffff, #e5e5e5);
+}
+
+.card {
+    display: inline-block;
+    margin-top:50px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    border-radius: 30px;
+    margin-bottom: -100px;
+
+    
+}
+h4{
+    text-align: center;
+}
+
+
+.card:hover {
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+    transform: scale(1.1);
+    border-radius: 30px;
+}
+
+.card-body {
+    padding: 3rem 0 !important;
+    border-radius: 30px;
+}
+
+.card-text {
+    font-size: .9rem;
+    padding: 0.4rem 1.9rem;
+}
+
+.container-fluid.row {
+    padding-top: 6rem;
+    border-radius: 30px; 
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.card-img-top {
+    overflow: hidden;
+    height: 15rem;
+    width: 19rem;
+    transform: scale(1);
+   
+}
+
+.card-img-top:hover {
+   transform: scale(1.1);
+}
+
+
+
+
+
+
+
