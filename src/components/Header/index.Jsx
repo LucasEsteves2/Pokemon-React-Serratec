@@ -1,13 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Container, Content, Imgc, TextoNav } from "./style.js";
 import logoImg from '../../assets/poke-store.png';
-import prod from '../../assets/img/produtos.png';
 import pika from '../../assets/pika.png';
 import coin from '../../assets/coin.svg';
 import { Link } from "react-router-dom";
-import Carrossel from "../Slider/Carrossel";
 import { useNavigate } from "react-router-dom";
-import { CartProvider } from "../../contexts/CartContext/index.js";
 import { useCount } from "../../contexts/CartContext";
 import Anuncio from "../Cart/Anuncio.jsx";
 
