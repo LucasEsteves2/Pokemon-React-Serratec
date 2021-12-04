@@ -93,7 +93,7 @@ export function Produto(props) {
               <h2>{props.produto.nome}</h2>
               <div className="color">
                 <h3>
-                  <strong className="valor">R$ {props.produto.valor}</strong>
+                  <strong className="valor">ID: {props.produto.id}</strong>
                 </h3>
                 <br/> <br/> <br/>
               </div>
@@ -105,6 +105,9 @@ export function Produto(props) {
         {props.produto.nome} Removido!!
         </Alert>
       </Snackbar>
+
+
+      
     </div>
             </div>
           </div>

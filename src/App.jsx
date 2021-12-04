@@ -18,6 +18,8 @@ import { Comprovante} from "./pages/Checkout/Comprovante";
 import { Pagamento } from "./pages/Checkout/Pagamento";
 import { useCount } from "./contexts/CartContext";
 import {useAcesso} from "./contexts/AdminContext"
+import EditarProduto from "./pages/admin/EditarProduto";
+import { IdProduto } from "./pages/admin/IdProduto";
 
 function App() {
   const {count,setCount} = useCount(); 
@@ -49,11 +51,18 @@ function App() {
           <Route exact path="/produtos" element={<Produto />} />
           <Route path="*" element={<Pagina404 />} />
           <Route path="/carrinho" element={<Carrinho />} />
+
           {acesso && <Route exact path="/admin" element={<Administrador />} />}
           {acesso && <Route exact path="/admin/produtos" element={<NewProduto />} />}
           {acesso && <Route exact path="/admin/remove" element={<DeletarProduto />} />}
+          {acesso && <Route exact path="/admin/editar/produto" element={<EditarProduto />} />}
+          {acesso && <Route exact path="/admin/editar" element={<IdProduto />} />}
+
           {carrinho && <Route path="/carrinho/pagamento" element={<Pagamento />} />}
           {carrinho && <Route path="/carrinho/comprovante" element={<Comprovante />} />}
+
+
+          
         </Routes>
       </BrowserRouter>
     </>

@@ -22,11 +22,15 @@ export function Header(props) {
                 <Content>
                     <img src={logoImg} alt="logo pokemon" />
                     <TextoNav>
+                        <br/>
                         <ul>
                             <li><Link to="/admin/produtos">Adicionar Produto</Link></li>
                             <li> <Link to="/admin/remove">Remover Produto</Link></li>
+                            <li> <Link to="/admin/editar">Editar Produto</Link></li>
+
                             <a onClick={controlar}> <li> Logout</li></a> 
                         </ul>
+                        
                     </TextoNav>
                 </Content>
                 <div id="pikachu">
