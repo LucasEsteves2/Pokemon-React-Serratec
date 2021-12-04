@@ -34,6 +34,7 @@ export default function Checkout() {
     const [focus, setFocus] = useState('');
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
+    const [valor,setValor] = useState(localStorage.getItem('ValorTotal'));
 
     const initialValues = {
         number: '',
@@ -88,7 +89,7 @@ export default function Checkout() {
                 </div>
                 <div className={classe.cardInfo}>
                     <img src={card} alt="card-img" />
-                    <Typography className={classe.cardTitle}>Adicione um novo cartão de crédito</Typography>
+                    <Typography className={classe.cardTitle}>Adicione um novo cartão</Typography>
                 </div>
                 <div className={classe.card}>
                     <Card
@@ -243,9 +244,9 @@ export default function Checkout() {
                                                     style={{width: '100%'}}
                                                 >
                                                     <option value="">Número de parcelas</option>
-                                                    <option value="1">1x 1000 Sem Juros</option>
-                                                    <option value="2">2x 2000 Sem Juros</option>
-                                                    <option value="3">3x 3000 Sem Juros</option>
+                                                    <option value="1">1x {valor} Sem Juros</option>
+                                                    <option value="2">2x {valor/2} Sem Juros</option>
+                                                    <option value="3">3x {valor/3} Sem Juros</option>
                                                 </Select>
                                             )}
                                         />

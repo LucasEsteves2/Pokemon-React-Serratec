@@ -20,13 +20,10 @@ import { useCount } from "./contexts/CartContext";
 import {useAcesso} from "./contexts/AdminContext"
 
 function App() {
-
-
   const {count,setCount} = useCount(); 
   const {acesso,setAcesso} = useAcesso(); 
   const [carrinho,setCarrinho] =useState( localStorage.getItem("carrinho"));
 
-  
   useEffect(() => {
     setAcesso(localStorage.getItem("acesso"))
     setCarrinho(localStorage.getItem("carrinho"))
@@ -37,7 +34,6 @@ function App() {
     setAcesso(localStorage.getItem("acesso"))
     setCarrinho(localStorage.getItem("carrinho"))
   }, [count])
-
 
 
   return (
@@ -62,6 +58,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-
 }
+
 export default App;

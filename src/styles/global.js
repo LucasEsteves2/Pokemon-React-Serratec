@@ -3,6 +3,8 @@ import 'react-credit-cards/es/styles-compiled.css';
 
 export const GlobalStyle = createGlobalStyle`
 
+
+
 :root{
     --amarelo:linear-gradient(20deg, #ffe50c 0, #fee300 50%, #fce100 100%);
     --blue:#5429cc;
@@ -100,6 +102,7 @@ button{
     height: 182px;
 }
 }
+
 
 
 `
