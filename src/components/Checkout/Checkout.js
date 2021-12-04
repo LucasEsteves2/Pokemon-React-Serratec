@@ -54,6 +54,7 @@ export default function Checkout() {
         console.log(cvv);
         console.log(parcelas);
         history("/carrinho/comprovante");
+     
 
         await addCard({
             number,
