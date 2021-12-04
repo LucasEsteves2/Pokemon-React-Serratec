@@ -1,12 +1,13 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 import { api } from "../service/api";
 import { useNavigate } from "react-router-dom";
+import {useAcesso} from "../contexts/AdminContext"
 
 function Login({ aoEnviar }) {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
-  const [acesso, setAcesso] = useState();
+  const {acesso,setAcesso} = useAcesso(); 
 
   const history = useNavigate();
 
@@ -34,14 +35,13 @@ function Login({ aoEnviar }) {
   async function getAcesso() {
     try {
       var { data } = await api.get(`/clientes/email?value=${username}`);
-
-
       localStorage.setItem('id', data.id)
-
 
       if (data.acesso == null) {
         console.log("Voce se conectou na conta de Cliente");
         history("/");
+        setAcesso(data.acesso)
+
       } else {
         localStorage.setItem('acesso', data.acesso)
         console.log("Bem vindo ADM");
