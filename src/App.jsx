@@ -22,13 +22,13 @@ import CartProvider from "./contexts/CartContext";
 
 function App() {
   const [admin, setAdmin] = useState();
+  const [carrinho,setCarrinho] =useState( localStorage.getItem("carrinho"));
 
   useEffect(() => {
     setAdmin(localStorage.getItem("acesso"))
-
+    setCarrinho(localStorage.getItem("carrinho"))
   }, [admin])
 
-  const carrinho = localStorage.getItem("carrinho")
 
   return (
     <>

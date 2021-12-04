@@ -9,13 +9,26 @@ export function Confirmar()
   let itensCarrinho = localStorage.getItem("produtoCarrinho");
   let qtd = localStorage.getItem("carrinho");
   itensCarrinho = JSON.parse(itensCarrinho);
-return (
+
+useEffect(() => {
+
+   localStorage.removeItem("ValorTotal");
+   localStorage.removeItem("carrinho");
+   localStorage.removeItem("produtoCarrinho");
+
+})
+
+  return (
+
+
+
 
     <>
     <Container> 
+       <div className="centralizado"> 
  <main class="ticket-system">
    <div class="top">
-   <h1 class="title">Espere um segundo, seu tíquete está sendo impresso</h1>
+   <h1 class="title">Aguarde a emissão da nota</h1>
    <div class="printer" />
    </div>
    <div class="receipts-wrapper">
@@ -55,13 +68,14 @@ return (
             </svg>
             <div class="description">
                <h2>Valor {subtotal}</h2>
-               <p>Compra Realizada</p>
+               <p>voltar</p>
             </div>
          </div>
       </div>
       
    </div>
 </main>
+</div>
 </Container>
     </>
 

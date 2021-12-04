@@ -14,15 +14,18 @@ import { useCount } from "../../contexts/CartContext";
 export function Header(props) {
     const {count,setCount} = useCount();
     const history = useNavigate();
-    const [qtdCarrinho2, setQtdCarrinho2] = useState();
+    const [img, setImg] = useState("null");
     const [texto, setTexto] = useState("");
-  
+    const [user,setUser]= useState(localStorage.getItem("username"))
+
+
     useEffect(() => {
         
+    setUser(localStorage.getItem("username"))
+    setCount(localStorage.getItem("carrinho"));
         logado()
-        setCount(localStorage.getItem("carrinho"));
 
-    }, [texto])
+    }, [count])
 
     function controlar()
     {
@@ -30,10 +33,12 @@ export function Header(props) {
         {  
     
              setTexto("login")
-            localStorage.clear();
-            alert("Volte sempre!")
-            history("/");
-
+             alert("Volte sempre!")
+             history("/");
+             setImg(null)
+             setCount(null)
+             localStorage.clear();
+             
         }
         else{
             history("/login");
@@ -44,10 +49,9 @@ export function Header(props) {
 
     function logado() {
 
-        const logado = localStorage.getItem("username")
-        if (logado) {
+        if (user) {
             setTexto("Logout")
-
+            setImg(coin)
         }
         else {
             setTexto("login")
@@ -55,12 +59,8 @@ export function Header(props) {
     }
 
     function carrinho(){
-        const logado = localStorage.getItem("username")
-        if(!logado){
-            history("/login");
-        }
-        else
-        {
+     
+      
             if(count)
             {
                 
@@ -70,7 +70,7 @@ export function Header(props) {
     
                 alert("Seu carrinho esta vazio!!")
             }
-        }
+        
 
 
     }
@@ -98,7 +98,7 @@ export function Header(props) {
                 </Content>
                 <div id="longin">
                <div onClick={carrinho}>
-                    <img src={coin} alt="" />{count}
+                    <img src={img} alt="" />{count}
                 
                 </div>
                     

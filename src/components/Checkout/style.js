@@ -8,13 +8,14 @@ export const Container = styled.div`
   }
   html, body {
 	height: 100%;
-	margin: 50px;
+	margin: 30px;
   }
   
-  body {
+  .centralizado  {
+	
 	@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 	font-family: 'Ubuntu', sans-serif;
-	background-color: 'red';
+	background: blue;
 	height: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -38,6 +39,7 @@ export const Container = styled.div`
 		margin-left: 20px;
 		margin-bottom: 50px;
 		color: #fff;
+		margin-top:50px
 	  }
 	  .printer {
 		width: 90%;
@@ -182,8 +184,8 @@ export const Container = styled.div`
 
   
 .svg-icon {
-	width: 3em;
-	height: 3em;
+	width: 5em;
+	height: 5em;
   }
   
   .svg-icon path,
