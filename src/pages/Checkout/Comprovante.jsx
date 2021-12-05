@@ -7,7 +7,7 @@ export function Comprovante()
   return (   
   <>
       <Confirmar/>
-      <buton>voltar</buton>
+     
     </>
 )
 

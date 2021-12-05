@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./style.js"
 import { Container} from "./style.js";
 
@@ -68,7 +69,7 @@ useEffect(() => {
             </svg>
             <div class="description">
                <h2>Valor {subtotal}</h2>
-               <p>voltar</p>
+              <Link to="/"> <p>voltar</p></Link>
             </div>
          </div>
       </div>
