@@ -3,6 +3,7 @@ import DadosPessoais from "./DadosPessoais";
 import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
 import { Typography, Stepper, Step, StepLabel } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 function FormularioCadastro({ aoEnviar }) {
   const [etapaAtual, setEtapaAtual] = useState(0);
@@ -18,7 +19,7 @@ function FormularioCadastro({ aoEnviar }) {
     <DadosUsuario aoEnviar={coletarDados} />,
     <DadosPessoais aoEnviar={coletarDados} />,
     <DadosEntrega aoEnviar={coletarDados} />,
-    <Typography variant="h5">Obrigado pelo Cadastro!</Typography>,
+    <Link to="/" ><Typography variant="h5">CONTINUAR!</Typography></Link>,
   ];
 
   function coletarDados(dados) {

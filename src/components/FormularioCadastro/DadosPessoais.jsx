@@ -36,6 +36,7 @@ function DadosPessoais({ aoEnviar }) {
         name="nome"
         variant="outlined"
         margin="normal"
+        required
         fullWidth
       />
       <TextField
@@ -48,6 +49,7 @@ function DadosPessoais({ aoEnviar }) {
         label="telefone"
         variant="outlined"
         margin="normal"
+        required
         fullWidth
       />
       <TextField
@@ -63,6 +65,7 @@ function DadosPessoais({ aoEnviar }) {
         label="CPF"
         variant="outlined"
         margin="normal"
+        required
         fullWidth
       />
 

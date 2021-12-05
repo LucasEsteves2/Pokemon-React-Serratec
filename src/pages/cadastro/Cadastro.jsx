@@ -50,7 +50,7 @@ async function cadastro(dados) {
     
   }
     catch{
-      alert("falha ao realizar o cadastro,  informe um cpf valido")
+      alert("falha ao realizar o cadastro,  informe um cpf valido (4devs para pegar um cpf valido)")
     }
     
     
