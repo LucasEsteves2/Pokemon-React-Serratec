@@ -26,7 +26,7 @@ useEffect(() => {
 
     <>
     <Container> 
-       <div className="centralizado"> 
+       <div class="centralizado"> 
  <main class="ticket-system">
    <div class="top">
    <h1 class="title">Aguarde a emissão da nota</h1>
