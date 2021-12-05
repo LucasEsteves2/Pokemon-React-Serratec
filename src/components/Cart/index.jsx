@@ -53,13 +53,19 @@ if(desscontinho ==null)
 else
 {  
   const descontinho2= desscontinho.toUpperCase()  
-  if(descontinho2 == "YURAO DA MASSA")
+  const c = "YURAO DA MASSA"
+  const yurao = descontinho2.trim()
+
+  if(yurao == "YURAO DA MASSA" )
   {
      handleClick()
      setAlertCupom({mensagem:"Cupom de 10% off aplicado", cor:"success"})
     var descontoe= (total-total*10/100);
     setTotal(descontoe)
     setCupomzinhoo("-10%")
+
+    localStorage.setItem("cupom",1)
+
   }
   else{
     setAlertCupom({mensagem:"Cupom invalido!!", cor:"error"})
@@ -113,7 +119,6 @@ return (
       
         <>
 
-        <Anuncio/>
     <div class="wrap cf">
   <h1 class="projTitle">Relatorio<span>-De</span> Compras</h1>
   <div class="heading cf">
