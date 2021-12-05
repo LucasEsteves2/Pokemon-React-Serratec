@@ -21,9 +21,6 @@ useEffect(() => {
 
   return (
 
-
-
-
     <>
     <Container> 
        <div class="centralizado"> 

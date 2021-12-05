@@ -3,17 +3,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 
-* {
-	box-sizing: border-box;
-  }
-  html, body {
-	height: 100%;
-	margin: 30px;
-  }
+
   
-  .centralizado  {
-	
-	@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+ 
 	font-family: 'Ubuntu', sans-serif;
 	background: blue;
 	height: 100%;
@@ -23,10 +15,12 @@ export const Container = styled.div`
 	color: #1c1c1c;
 	display: flex;
 	justify-content: center;
-  }
+	
+  
   
   
   .ticket-system {
+	  
 	max-width: 385px;
 	.top {
 	  display: flex;
