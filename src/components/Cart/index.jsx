@@ -21,7 +21,7 @@ export function CarrinhoCompras () {
   const [subtotal,setSubtotal] =useState((localStorage.getItem("ValorTotal")))
   const [total,setTotal] =useState((localStorage.getItem("ValorTotal")))
   const [cupomzinhoo,setCupomzinhoo] = useState("- -")
-
+  const [campo,setCampo] = useState(null)
     let itensCarrinho = localStorage.getItem("produtoCarrinho");
     itensCarrinho = JSON.parse(itensCarrinho);
      const history = useNavigate();
@@ -48,7 +48,8 @@ function cupom()
   const desscontinho = desconto;
 if(desscontinho ==null)
 {
-  alert("CUPOM INVALIDO!!")
+  setAlertCupom({mensagem:"Cupom invalido!!", cor:"error"})
+    handleClick()
 }
 else
 {  
@@ -67,9 +68,8 @@ else
     setCupomzinhoo("-10%")
 
     localStorage.setItem("cupom",1)
-    document.getElementById("btnCupom").disabled = true;
-
-
+    setDesconto("CUPOM APLICADO") 
+    setCampo("true")
   }
   else{
     setAlertCupom({mensagem:"Cupom invalido!!", cor:"error"})
@@ -179,7 +179,7 @@ return (
   </div>
   
   <div class="promoCode"><label for="promo">Tem um código promocional?</label>
-  <input type="text" name="promo" placholder="Enter Code" value={desconto} onChange={(e)=>{setDesconto(e.target.value)}}  />
+  <input readonly={campo} type="text" name="promo" placholder="Enter Code" value={desconto} onChange={(e)=>{setDesconto(e.target.value)}}  />
   <a onClick={cupom} id="btnCupom" class="btn"></a></div>
   
   <div class="subtotal cf">
