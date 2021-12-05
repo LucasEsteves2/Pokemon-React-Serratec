@@ -2,17 +2,14 @@ import styled from "styled-components";
 
 export const Imgbx = styled.div`
 
-
+display: inline-block;
+margin-top: 5rem;
+margin-left: 6.6rem;
 
 #poke{
     width:55%;
     height:auto;
 }
-
-margin-top: 2rem;
-margin-left: 6.6rem;
-display: inline-block;
-
 
 
 .container1 .card{
