@@ -69,7 +69,7 @@ useEffect(() => {
             </svg>
             <div class="description">
                <h2>Valor {subtotal}</h2>
-              <Link to="/"> <p>voltar</p></Link>
+              <Link to="/"> <p>voltarr</p></Link>
             </div>
          </div>
       </div>
