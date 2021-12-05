@@ -100,11 +100,6 @@ export function Produto(props) {
               <a onClick={comprar} className="btnComprar">Remover</a>
               <div>
     
-              <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-        {props.produto.nome} Removido!!
-        </Alert>
-      </Snackbar>
 
 
       
@@ -113,6 +108,12 @@ export function Produto(props) {
           </div>
         </div>
       </Imgbx>
+      
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        {props.produto.nome} Removido!!
+        </Alert>
+      </Snackbar>
     </>
   );
 }

@@ -3,9 +3,20 @@ import './style.scss';
 import Anuncio from "./Anuncio";
 import {api} from "../../service/api"
 import { useNavigate } from "react-router-dom";
+import { Snackbar , Button,IconButton,Stack } from "@material-ui/core";
+import { Cancel } from "@material-ui/icons"
+import MuiAlert from "@material-ui/lab/Alert";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export function CarrinhoCompras () {
   
+  const  [alertCupom, setAlertCupom] =useState({
+    mensagem:null,
+    cor: null
+  })
   const [desconto,setDesconto] = useState()  
   const [subtotal,setSubtotal] =useState((localStorage.getItem("ValorTotal")))
   const [total,setTotal] =useState((localStorage.getItem("ValorTotal")))
@@ -44,24 +55,59 @@ else
   const descontinho2= desscontinho.toUpperCase()  
   if(descontinho2 == "YURAO DA MASSA")
   {
-    alert("cupom de 10% off aplicado")
+     handleClick()
+     setAlertCupom({mensagem:"Cupom de 10% off aplicado", cor:"success"})
     var descontoe= (total-total*10/100);
     setTotal(descontoe)
-
-    localStorage.setItem('ValorTotal',descontoe)
     setCupomzinhoo("-10%")
   }
   else{
-    alert("cupom invalido")
+    setAlertCupom({mensagem:"Cupom invalido!!", cor:"error"})
+    handleClick()
   }
 }
 }
 
 async function finalizarCompra()
 {
+  localStorage.setItem('ValorTotal',total)
+
   history("/carrinho/pagamento")
 
 }
+
+
+const [open, setOpen] = React.useState(false);
+
+const handleClick = () => {
+  setOpen(true);
+};
+
+
+const handleClose = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+  setOpen(false);
+};
+
+
+
+const action = (
+  <React.Fragment>
+    <Button color="secondary" size="small" onClick={handleClose}>
+      Fechar
+    </Button>
+    <IconButton
+      size="small"
+      aria-label="close"
+      color="inherit"
+      onClick={handleClose}
+    >
+      <Cancel fontSize="small" />
+    </IconButton>
+  </React.Fragment>
+);
 
 return ( 
       
@@ -139,6 +185,16 @@ return (
     </ul>
   </div>
 </div>
+
+
+
+
+
+<Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={alertCupom.cor} sx={{ width: '100%' }}>
+         {alertCupom.mensagem}
+        </Alert>
+      </Snackbar>
         </>
         );
     }

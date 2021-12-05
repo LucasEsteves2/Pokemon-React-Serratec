@@ -29,13 +29,6 @@ background: var(--background) ;
 -webkit-font-smoothing:antialiased;
 }
 
-html, body, #root {
-    min-height: 100% !important;
-    height: 100%;
-    max-height: 100%;
-  }
-  
-
   
 //font size:16px padrao
 html{
