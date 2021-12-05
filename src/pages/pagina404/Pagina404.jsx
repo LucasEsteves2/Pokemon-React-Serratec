@@ -1,10 +1,9 @@
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Img } from "react-image";
-
-import Snorlax from "../../assets/img/Snorlax.svg";
+import { Container, Typography } from "@material-ui/core";
+import Snorlax from "../../assets/img/Snorlax.png";
 import { Errinho } from "./style";
-
 
 
 export function  Pagina404 () {
@@ -18,12 +17,16 @@ export function  Pagina404 () {
     <Errinho> 
 		<div>
 			<h1>
-				4<Img src={Snorlax} class="eoq" alt="404" />4
+				 <Img src={Snorlax} class="eoq" alt="404" />
 			</h1>
-			<p >
-				<span className="span">Opps!</span> A wild Snorlax has blocked
-				your path!
-			</p>
+			<br/>
+			<Container component="article" maxWidth="xm">
+			<Typography variant="p" component="h1" align="center" color="common.white">
+			Opps! Um Snorlax selvagem bloqueou seu caminho!
+
+          </Typography>
+			</Container>
+
 		</div>
     </Errinho>
 	)
