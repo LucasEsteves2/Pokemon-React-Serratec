@@ -123,8 +123,8 @@ return (
       
         <>
 
-    <div class="wrap cf">
-  <h1 class="projTitle">Relatorio<span>-De</span> Compras</h1>
+    <div class="wrap cf">  
+  <h1 class="projTitle">Relatório <span>-De</span> Compras</h1>
   <div class="heading cf">
     <h1>Meu Carrinho</h1>
     <a href="#"  onClick={limparCarrinho}class="continue">Limpar Carrinho</a>

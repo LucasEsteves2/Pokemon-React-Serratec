@@ -99,21 +99,18 @@ export function Produto(props) {
               </div>
               <a onClick={comprar} className="btnComprar">Remover</a>
               <div>
-    
-
-
-      
     </div>
             </div>
           </div>
         </div>
+
       </Imgbx>
-      
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
         {props.produto.nome} Removido!!
         </Alert>
       </Snackbar>
+      
     </>
   );
 }

@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Anuncio = () => {
-  return <Container>SUPER OFERTA!!, FRETE GRATIS PARA TODAS AS COMPRAS
+  return <Container>SUPER OFERTA!! FRETE GRÁTIS PARA TODAS AS COMPRAS
   </Container>;
 };
 
