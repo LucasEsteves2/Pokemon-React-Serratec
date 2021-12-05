@@ -58,8 +58,6 @@ else
 
   
 
-
-
   if(yurao == "YURAO DA MASSA" )
   {
      handleClick()
@@ -69,6 +67,8 @@ else
     setCupomzinhoo("-10%")
 
     localStorage.setItem("cupom",1)
+    document.getElementById("btnCupom").disabled = true;
+
 
   }
   else{
@@ -180,7 +180,7 @@ return (
   
   <div class="promoCode"><label for="promo">Tem um código promocional?</label>
   <input type="text" name="promo" placholder="Enter Code" value={desconto} onChange={(e)=>{setDesconto(e.target.value)}}  />
-  <a onClick={cupom} class="btn"></a></div>
+  <a onClick={cupom} id="btnCupom" class="btn"></a></div>
   
   <div class="subtotal cf">
     <ul>
