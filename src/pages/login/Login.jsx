@@ -14,7 +14,7 @@ function Login() {
         <br /> <br />
         <Link to="/cadastro">
           <Typography variant="p" component="h1" align="center" color="secondary">
-          Não tem uma conta? *Crie uma conta*
+           Não tem uma conta? *Crie uma conta*
           </Typography>
         </Link>
       </Container>

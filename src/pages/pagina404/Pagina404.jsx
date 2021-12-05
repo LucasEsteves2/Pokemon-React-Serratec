@@ -1,5 +1,4 @@
 import React, { useCallback } from "react";
-import { createUseStyles } from "react-jss";
 import { useNavigate } from "react-router-dom";
 import { Img } from "react-image";
 
