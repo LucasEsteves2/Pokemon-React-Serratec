@@ -56,6 +56,10 @@ else
   const c = "YURAO DA MASSA"
   const yurao = descontinho2.trim()
 
+  
+
+
+
   if(yurao == "YURAO DA MASSA" )
   {
      handleClick()

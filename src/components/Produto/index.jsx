@@ -161,10 +161,6 @@ export function Produto(props) {
               </div>
               <a onClick={comprar} className="btnComprar">Comprar</a>
               <div>
-    
-
-
-      
     </div>
             </div>
           </div>
